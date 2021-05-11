@@ -1,24 +1,14 @@
 const express = require("express")
 const connectDB = require("./models/mongodb.js")
-connectDB()
 
 const server = express()
 
-server.post("/send", (req, res) => {
+// helping express work with json and cookies
+server.use(express.json());
+server.use(express.urlencoded({ extended: true }));
 
-})
-
-server.put("/update", (req, res) => {
-
-})
-
-server.get("/data", (req, res) => {
-
-})
-
-server.delete("/delete", (req, res) => {
-
-})
+// route to interact with the user model
+server.use("/user", require("./routes/user_route.js"))
 
 const PORT = process.env.PORT || 3000
 server.listen(PORT)

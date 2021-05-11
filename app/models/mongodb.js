@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-export default start_mongo = () => {
+const start_mongo = () => {
   mongoose.connect("mongodb://127.0.0.1:27017", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -8,3 +8,5 @@ export default start_mongo = () => {
     useCreateIndex: true,
   });
 };
+
+module.export = start_mongo;
