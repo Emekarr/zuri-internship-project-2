@@ -1,5 +1,5 @@
 const express = require("express")
-const connectDB = require("./database/mongodb.js")
+const connectDB = require("./models/mongodb.js")
 connectDB()
 
 const server = express()
