@@ -3,6 +3,7 @@ const {
   add_user,
   update_user,
   retrieve_user,
+  delete_user,
 } = require("../controllers/user_controller.js");
 
 const router = express.Router();
@@ -13,6 +14,6 @@ router.put("/update", update_user);
 
 router.get("/data", retrieve_user);
 
-router.delete("/delete", (req, res) => {});
+router.delete("/delete", delete_user);
 
 module.exports = router;
