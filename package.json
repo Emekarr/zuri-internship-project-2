@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon ./app/server.js"
+    "start": "node ./app/server.js",
+    "devStart": "nodemon ./app/server.js"
   },
   "author": "",
   "license": "ISC",
@@ -14,5 +15,8 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.7"
+  },
+  "engines": {
+    "node": "12.18.3"
   }
 }
