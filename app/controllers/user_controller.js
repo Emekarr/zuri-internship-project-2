@@ -13,6 +13,20 @@ const add_user = async (req, res) => {
   }
 };
 
+const update_user = async (req, res) => {
+  try {
+    const { email } = req.query;
+    const update = req.body;
+    const updated_user = await User.findOneAndUpdate({ email }, update, {
+      new: true,
+    });
+    res.send({ message: "success", data: updated_user });
+  } catch (e) {
+    res.send(e.message);
+  }
+};
+
 module.exports = {
   add_user,
+  update_user,
 };
